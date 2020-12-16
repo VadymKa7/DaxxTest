@@ -1,0 +1,23 @@
+ext {
+    versions = [
+
+            // Build
+            compileSdk    : 29,
+            support       : '29.0.0',
+            minSdk        : 21,
+            targetSdk     : 29,
+
+            versionCode   : 19,
+            versionName   : '1.0.0',
+
+            kotlin        : '1.4.21',
+            dagger        : '2.16',
+            lifecycle     : '2.2.0',
+            rx            : '3.0.0',
+            gson          : '2.8.6',
+            retrofit      : '2.9.0',
+            glide         : '4.10.0',
+            okhttp        : '4.9.0',
+            navigation    : '2.3.2',
+    ]
+}

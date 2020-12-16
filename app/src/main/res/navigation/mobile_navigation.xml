@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <activity
+        android:id="@+id/main_activity"
+        android:name="com.vadym.daxxtest.ui.main.MainActivity"
+        android:label="@string/activity_main"
+        tools:layout="@layout/activity_main"
+        />
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.vadym.daxxtest.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" >
+
+        <action
+            android:id="@+id/action_homeFragment_to_detailsFragment"
+            app:destination="@id/detailsFragment"
+            app:enterAnim="@anim/fragment_fade_enter"
+            app:exitAnim="@anim/fragment_fade_exit"
+            app:popEnterAnim="@anim/fragment_fade_enter"
+            app:popExitAnim="@anim/fragment_fade_exit" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/detailsFragment"
+        android:name="com.vadym.daxxtest.ui.home.DetailsFragment"
+        android:label="DetailsFragment"
+        tools:layout="@layout/fragment_details" >
+        <argument
+            android:name="data"
+            app:argType="com.vadym.daxxtest.model.NewsItem"
+            app:nullable="true"
+            android:defaultValue="@null" />
+        <action
+            android:id="@+id/action_detailsFragment_to_estimateFragment"
+            app:destination="@id/estimateFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/estimateFragment"
+        android:name="com.vadym.daxxtest.ui.home.EstimateFragment"
+        android:label="EstimateFragment"
+        tools:layout="@layout/fragment_estimate">
+        <argument
+            android:name="data"
+            app:argType="com.vadym.daxxtest.model.NewsItem"
+            app:nullable="true"
+            android:defaultValue="@null" />
+        <action
+            android:id="@+id/action_estimateFragment_to_detailsFragment"
+            app:destination="@id/detailsFragment" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/nav_nested"
+        android:name="com.vadym.daxxtest.ui.child.NestedFragment"
+        android:label="@string/menu_gallery"
+        tools:layout="@layout/fragment_nested" />
+</navigation>
