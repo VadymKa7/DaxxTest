@@ -36,8 +36,7 @@ class NestedFragment : Fragment() {
         galleryViewModel = injectViewModel(viewModelFactory)
         binding.viewModel = galleryViewModel
 
-        galleryViewModel.text.observe(viewLifecycleOwner, Observer {
-
+        galleryViewModel.text.observe(viewLifecycleOwner, {
             Toast.makeText(context, "Nested Fragment : $it", Toast.LENGTH_LONG).show()
         })
 
