@@ -16,8 +16,8 @@ ext {
             rx            : '3.0.0',
             gson          : '2.8.6',
             retrofit      : '2.9.0',
-            glide         : '4.10.0',
-            okhttp        : '4.9.0',
+            glide         : '4.11.0',
+            okhttp        : '4.9.1',
             navigation    : '2.3.2',
     ]
 }
